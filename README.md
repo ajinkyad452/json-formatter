@@ -19,7 +19,7 @@ To run this project locally:
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/json-formatter.git
+    git clone https://github.com/ajinkyad452/json-formatter.git
     ```
    
 2. **Navigate to the project directory**:
