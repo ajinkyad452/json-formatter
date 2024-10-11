@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> <!-- Defines the character encoding for the document (UTF-8 is recommended) -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Controls the layout on mobile browsers -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Ensures compatibility with Internet Explorer -->
+
+    <meta name="description" content="Use this tool for worry free json formatting. We will never store it.">
+    <!-- Short description of your webpage for search engines and social sharing -->
+
+    <meta name="keywords" content="json,JSON,Formatter">
+    <!-- Important keywords for SEO (although less important than before, it's still good practice) -->
+
+    <meta name="author" content="Ajinkya Dube"> <!-- Specifies the author of the document -->
+
+    <meta name="robots" content="index, follow"> <!-- Allows search engines to index the page and follow links -->
+
+    <meta name="theme-color" content="#2980b9">
+    <!-- Sets the color of the browser's address bar and Android task switcher (replace with your theme color) -->
+
+    <!-- Favicon (Replace with actual icons for web and mobile) -->
+    <link rel="icon" href="favicon.png" type="image/png"> <!-- Standard favicon -->
+    <link rel="apple-touch-icon" href="favicon.png"> <!-- Apple touch icon for iOS devices -->
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon128.png"> <!-- Android favicon -->
+
+    <!-- Manifest for Progressive Web App (PWA) -->
+    <link rel="manifest" href="manifest.json"> <!-- Provides meta information for PWA apps -->
+
+    <title>JSON Formatter</title> <!-- Sets the title for your website -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="json-formatter.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/json-formatter-js@2.5.18/dist/json-formatter.min.css">
+    <link rel="stylesheet" href="custom.css">
+    <script src="custom.js"></script>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+      <a href="https://www.linkedin.com/in/ajinkya-dube" target="_blank" class="maintainer">Maintainer</a>
+    </header>
+    <h1>JSON Formatter</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col col-5">
+                <h3 style="margin-bottom: 5px;">JSON Data</h3>
+                <textarea id="jsonInput" rows="10" placeholder="{&quot;Choose Kindness&quot;:&quot;❤️&quot;}"></textarea>
+                <div id="errorMessage"></div>
+                <!-- <h3>Formatted JSON Output </h3> -->
+                <pre id="preText" style="display:none;"></pre>
+            </div>
+            <div class="col col-1" style="text-align: center;">
+                <button class="" onclick="pretifyJson()">Process</button>
+            </div>
+            <div class="col col-6">
+                <span class="h3">Formatted JSON Data</span>
+                <button onclick="copyJson('#preText')" class="copy-btn">Copy To Clipboard</button>
+                <div id="formattedObjectBlock"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function() {
+            navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+              console.log('Service Worker registered with scope:', registration.scope);
+            }, function(err) {
+              console.log('Service Worker registration failed:', err);
+            });
+          });
+        }
+      </script>      
+</body>
+
+</html>

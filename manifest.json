@@ -1,0 +1,25 @@
+{
+  "name": "JSON Formatter",
+  "short_name": "JSON Formatter",
+  "description": "Use this tool for worry free json formatting. We will never store it.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2980b9",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "favicon128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    }
+  ],
+  "scope": "/",
+  "related_applications": [],
+  "prefer_related_applications": false
+}
