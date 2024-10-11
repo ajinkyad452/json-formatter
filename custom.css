@@ -30,6 +30,11 @@ h1 {
     width: 100%;
 }
 
+span.logo {
+    font-size: 16px;
+    font-weight: bold;
+}
+
 textarea,
 pre {
     width: 100%;
@@ -41,6 +46,8 @@ pre {
     font-family: "Roboto Mono", Consolas, "Courier New", monospace;
     color: #333;
     font-weight: 300;
+    background: #fff;
+    text-wrap: wrap;
 }
 
 button {
@@ -62,6 +69,18 @@ button:hover {
 }
 
 #formattedObjectBlock {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    max-height: 400px;
+    overflow: auto;
+    background: #fff;
+    width: 100%;
+    width: -webkit-fill-available;
+    min-height: 184px;
+}
+
+#preText{
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
@@ -125,6 +144,8 @@ header {
 }
 h4{
     text-align:center;
+    font-size: 12px;
+    font-weight: 400;
 }
 
 @media only screen and (max-width: 768px) {
@@ -168,3 +189,343 @@ h4{
     }
     
 }
+
+/* Simplified Header Styling */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .header-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile adjustments */
+@media only screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+}
+/* Style for Privacy and Terms Sections */
+section {
+    max-width: 800px;  /* Limits the width for readability */
+    margin: 0 auto;    /* Centers the content */
+    padding: 20px;     /* Adds padding around the content */
+}
+
+section h2 {
+    text-align: center;  /* Centers the section titles */
+    margin-bottom: 20px;
+}
+
+section p {
+    text-align: justify; /* Makes the text look balanced */
+    line-height: 1.6;    /* Improves readability */
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 10px;
+        max-width: 100%; /* Ensures content fits well on mobile */
+    }
+}
+.format-options {
+    margin: 10px 0;
+}
+
+.format-options label {
+    margin-right: 10px;
+}
+
+#formattedOutput {
+    white-space: pre-wrap; /* Preserve formatting */
+}
+
+#loading {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+/* Default Light Mode */
+body {
+    background-color: #e5d9d9;
+    color: black;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #2980b9;
+    color: white;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button#darkModeToggle {
+    background-color: transparent;
+    color: #fff;
+    font-size: 14px;
+    margin: 0;
+    padding-top: 0;
+    font-weight: 500;
+}
+
+button#darkModeToggle.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+.json-view {
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Dark mode for JSON views */
+body.dark-mode .json-view {
+    background-color: #2b2b2b;
+    color: #e0e0e0;
+}
+
+.dark-mode-toggle{
+    float: right;
+}
+
+.cookie-consent {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    z-index: 1000;
+    display: none; /* Initially hidden */
+}
+
+.cookie-consent p {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cookie-consent button {
+    background-color: white;
+    color: #007bff;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.cookie-consent button:hover {
+    background-color: #f1f1f1;
+}
+
+
+/* Smooth transitions for all elements */
+* {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Button Hover Effect */
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slight scale on hover */
+}
+
+/* Input focus effect */
+textarea, input[type="text"] {
+    border: 1px solid #ccc;
+    padding: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+textarea:focus, input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Real-time character counter */
+#charCounter {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+
+/*tooltip*/
+/* Tooltip styling */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*scroll to top*/
+/* Scroll-to-top button styling */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    font-size: 16px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-to-top:hover {
+    background-color: #0056b3;
+}
+
+
+/* Icon button styling */
+.icon-btn {
+    background-color: transparent; /* No background for a clean look */
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 5px;
+}
+
+.icon-btn img {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.icon-btn img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Add some space between the dropdown and checkbox */
+.format-options {
+    margin-bottom: 15px; /* Space between elements */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between label and input */
+}
+
+/* Styling the dropdown */
+.styled-dropdown {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.styled-dropdown:hover,
+.styled-dropdown:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Styling the checkbox */
+.styled-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #007bff; /* Changes the color of the checkbox */
+    border-radius: 3px;
+}
+
+/* Style for label */
+label {
+    font-weight: bold;
+}
+
+
+/* Collapsible button styling */
+.toggle-btn {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.toggle-btn:hover {
+    background-color: #0056b3;
+}
+
