@@ -10,7 +10,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 h1 {
@@ -26,7 +26,7 @@ h1 {
 
 .col {
     flex: 1;
-    margin: 10px;
+    /* margin: 10px; */
     width: 100%;
 }
 
@@ -78,6 +78,7 @@ button:hover {
     width: 100%;
     width: -webkit-fill-available;
     min-height: 184px;
+    margin: 14.4px 0;
 }
 
 #preText{
@@ -109,21 +110,14 @@ button:hover {
     font-weight: bold;
 }
 
-.h3 {
+.heading {
     font-size: 1.17em;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
     font-weight: bold;
-    unicode-bidi: isolate;
+    margin-top: 10px;
+    padding-top: 5px;
+    display: inline-block;
 }
 
-header {
-    color: white;
-    padding: 1px;
-    text-align: right;
-}
 
 #errorMessage {
     color: #fff;
@@ -138,9 +132,7 @@ header {
 
 .maintainer{
     margin: 5px;
-    font-size: 10px;
-    color: #fff;
-    text-decoration: none;
+    color: inherit;
 }
 h4{
     text-align:center;
@@ -192,12 +184,13 @@ h4{
 
 /* Simplified Header Styling */
 header {
-    background-color: #007bff;
-    color: white;
+    background-color: inherit;
     padding: 10px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
 }
 
 header .header-container {
@@ -212,13 +205,18 @@ header nav {
 }
 
 header nav a {
-    color: white;
+    color: inherit;
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
 }
 
 header nav a:hover {
+    text-decoration: underline;
+}
+
+.slogan{
+    font-size: 12px;
     text-decoration: underline;
 }
 
@@ -231,6 +229,7 @@ header nav a:hover {
 
     header nav {
         margin-top: 10px;
+        display: none;
     }
 }
 /* Style for Privacy and Terms Sections */
@@ -276,6 +275,10 @@ section p {
     margin-top: 10px;
 }
 
+button#processButton {
+    width: 50%;
+    background: #db5f12;
+}
 
 /* Default Light Mode */
 body {
@@ -299,7 +302,7 @@ button {
 
 button#darkModeToggle {
     background-color: transparent;
-    color: #fff;
+    color: inherit;
     font-size: 14px;
     margin: 0;
     padding-top: 0;
@@ -322,6 +325,10 @@ button#darkModeToggle.dark-mode {
 body.dark-mode .json-view {
     background-color: #2b2b2b;
     color: #e0e0e0;
+}
+
+body.dark-mode button#processButton {
+    background-color: #2accc8;
 }
 
 .dark-mode-toggle{
@@ -529,3 +536,16 @@ label {
     background-color: #0056b3;
 }
 
+.export-options {
+    margin-top: 10px;
+    padding: 5px;
+    float: right;
+    margin-left: 10px;
+    background: #dfaaaa;
+    border-radius: 5px;
+}
+
+
+body.dark-mode div.export-options {
+    background-color: #2accc8;
+}

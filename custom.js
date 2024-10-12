@@ -73,13 +73,14 @@ function copyJson(selector) {
 }
 
 function exportJson() {
+    const currentMillis = Date.now();
     const formattedJson = document.getElementById('preText').innerText;
     if (formattedJson) {
         const blob = new Blob([formattedJson], { type: 'application/json' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'formatted.json';
+        a.download = 'json-format-'+currentMillis+'.json';
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a); // Clean up the DOM
@@ -96,10 +97,10 @@ function toggleDarkMode() {
 
     if (body.classList.contains('dark-mode')) {
         localStorage.setItem('theme', 'dark'); // Store the preference in localStorage
-        toggleButton.innerText = 'Switch to Light Mode';
+        toggleButton.innerText = 'Light Mode';
     } else {
         localStorage.setItem('theme', 'light'); // Store the preference in localStorage
-        toggleButton.innerText = 'Switch to Dark Mode';
+        toggleButton.innerText = 'Dark Mode';
     }
 }
 
@@ -111,10 +112,10 @@ window.onload = function() {
 
     if (savedTheme === 'dark') {
         body.classList.add('dark-mode');
-        toggleButton.innerText = 'Switch to Light Mode';
+        toggleButton.innerText = 'Light Mode';
     } else {
         body.classList.remove('dark-mode');
-        toggleButton.innerText = 'Switch to Dark Mode';
+        toggleButton.innerText = 'Dark Mode';
     }
 
     if (!localStorage.getItem('cookieConsent')) {
